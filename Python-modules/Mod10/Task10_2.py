@@ -33,5 +33,12 @@ class House:
   def __init__(self, low_floor, high_floor, elevators):
     self.low_floor = low_floor
     self.high_floor = high_floor
+    self.elevators = elevators
+    self.elevators = [Elevator(low_floor, high_floor) for i in range(elevators)]
 
-#en osaa loppuun
+  def move_elevator(self, elenum, desfloor):
+        self.elevators[elenum - 1].move(desfloor)
+
+
+house1 = House(1, 5, 2)
+house1.move_elevator(2, 4)
